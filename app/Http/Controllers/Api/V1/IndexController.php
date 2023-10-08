@@ -22,15 +22,7 @@ class IndexController extends Controller
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
-        if (!empty($data['image_url'])) {
-            $data['image'] = $data['image_url'];
-            unset($data['image_url']);
-        }
 
-        if (is_file($data['image'])) {
-            $image_url = Storage::disk('public')->put('/images', $request['image']);
-            $data['image'] = $image_url;
-        }
         $notebook = Notebook::create($data);
         return new NotebookResource($notebook);
 
@@ -46,15 +38,6 @@ class IndexController extends Controller
     {
         $data = $request->validated();
         $notebook = Notebook::query()->where('id', $id)->first();
-        if (!empty($data['image_url'])) {
-            $data['image'] = $data['image_url'];
-            unset($data['image_url']);
-        }
-
-        if (is_file($data['image'])) {
-            $image_url = Storage::disk('public')->put('/images', $request['image']);
-            $data['image'] = $image_url;
-        }
 
         $notebook->update($data);
         return new NotebookResource($notebook);
