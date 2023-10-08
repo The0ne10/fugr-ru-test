@@ -1,0 +1,430 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My Doc API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/": {},
+        "/api/v1/notebook": {
+            "get": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Список",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "fullName": {
+                                                        "type": "string",
+                                                        "example": "Кон Чен ыЙ"
+                                                    },
+                                                    "company": {
+                                                        "type": "string",
+                                                        "example": "Едения корея"
+                                                    },
+                                                    "phone": {
+                                                        "type": "integer",
+                                                        "example": "89135624307"
+                                                    },
+                                                    "email": {
+                                                        "type": "string",
+                                                        "example": "korei@gmail.com"
+                                                    },
+                                                    "birthday": {
+                                                        "type": "string",
+                                                        "format": "date",
+                                                        "example": "7.10.1952"
+                                                    },
+                                                    "image": {
+                                                        "type": "string",
+                                                        "example": "https://icdn.lenta.ru/images/2020/06/08/15/20200608154336600/square_320_3071243fc6e30d9f50ede8dd1272923b.jpg"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "links": {
+                                            "properties": {
+                                                "first": {
+                                                    "type": "string",
+                                                    "example": "http://127.0.0.1:8000/api/v1/notebook?page=1"
+                                                },
+                                                "last": {
+                                                    "type": "string",
+                                                    "example": "http://127.0.0.1:8000/api/v1/notebook?page=2"
+                                                },
+                                                "prev": {
+                                                    "type": "string",
+                                                    "example": null
+                                                },
+                                                "next": {
+                                                    "type": "string",
+                                                    "example": "http://127.0.0.1:8000/api/v1/notebook?page=2"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "meta": {
+                                            "properties": {
+                                                "current_page": {
+                                                    "type": "string",
+                                                    "example": 1
+                                                },
+                                                "from": {
+                                                    "type": "string",
+                                                    "example": 1
+                                                },
+                                                "last_page": {
+                                                    "type": "string",
+                                                    "example": 2
+                                                },
+                                                "links": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "properties": {
+                                                            "url": {
+                                                                "type": "string",
+                                                                "example": "http://127.0.0.1:8000/api/v1/notebook?page=1"
+                                                            },
+                                                            "label": {
+                                                                "type": "string",
+                                                                "example": "1"
+                                                            },
+                                                            "active": {
+                                                                "type": "string",
+                                                                "example": true
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "path": {
+                                                    "type": "string",
+                                                    "example": "http://127.0.0.1:8000/api/v1/notebook"
+                                                },
+                                                "per_page": {
+                                                    "type": "string",
+                                                    "example": 10
+                                                },
+                                                "to": {
+                                                    "type": "string",
+                                                    "example": 10
+                                                },
+                                                "total": {
+                                                    "type": "string",
+                                                    "example": 11
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Создание",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "fullName": {
+                                                "type": "string",
+                                                "example": "Кон Чен ыЙ"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "Едения корея"
+                                            },
+                                            "phone": {
+                                                "type": "integer",
+                                                "example": "89135624307"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "korei@gmail.com"
+                                            },
+                                            "birthday": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "7.10.1952"
+                                            },
+                                            "image": {
+                                                "type": "string",
+                                                "example": "https://icdn.lenta.ru/images/2020/06/08/15/20200608154336600/square_320_3071243fc6e30d9f50ede8dd1272923b.jpg"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "fullName": {
+                                                    "type": "string",
+                                                    "example": "Кон Чен ыЙ"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Едения корея"
+                                                },
+                                                "phone": {
+                                                    "type": "integer",
+                                                    "example": "89135624307"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "korei@gmail.com"
+                                                },
+                                                "birthday": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "example": "7.10.1952"
+                                                },
+                                                "image": {
+                                                    "type": "string",
+                                                    "example": "https://icdn.lenta.ru/images/2020/06/08/15/20200608154336600/square_320_3071243fc6e30d9f50ede8dd1272923b.jpg"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/notebook/{notebook}": {
+            "get": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Еденичная запись",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "ID notebook",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "fullName": {
+                                                    "type": "string",
+                                                    "example": "Кон Чен ыЙ"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Едения корея"
+                                                },
+                                                "phone": {
+                                                    "type": "integer",
+                                                    "example": "89135624307"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "korei@gmail.com"
+                                                },
+                                                "birthday": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "example": "7.10.1952"
+                                                },
+                                                "image": {
+                                                    "type": "string",
+                                                    "example": "https://icdn.lenta.ru/images/2020/06/08/15/20200608154336600/square_320_3071243fc6e30d9f50ede8dd1272923b.jpg"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Обновление",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "ID notebook",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "fullName": {
+                                                "type": "string",
+                                                "example": "Ким Чен Ым"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "Северная корея"
+                                            },
+                                            "phone": {
+                                                "type": "integer",
+                                                "example": "8913624307"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "koreiEdit@gmail.com"
+                                            },
+                                            "birthday": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "23.11.1956"
+                                            },
+                                            "image": {
+                                                "type": "string",
+                                                "example": null
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "fullName": {
+                                                    "type": "string",
+                                                    "example": "Ким Чен Ым"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Северная корея"
+                                                },
+                                                "phone": {
+                                                    "type": "integer",
+                                                    "example": "8913624307"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "koreiEdit@gmail.com"
+                                                },
+                                                "birthday": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "example": "23.11.1956"
+                                                },
+                                                "image": {
+                                                    "type": "string",
+                                                    "example": null
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "responses": {
+            "200": {
+                "description": "OK",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "example": "done"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "notebook": {
+                "name": "notebook",
+                "in": "path",
+                "description": "ID notebook",
+                "required": true,
+                "example": 1
+            }
+        }
+    }
+}
