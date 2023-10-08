@@ -29,8 +29,7 @@ class UpdateRequest extends FormRequest
             'phone' => ['nullable', 'regex:' .self::ru_number, 'digits:11'],
             'email' => 'nullable|unique:notebooks,email',
             'birthday' => 'nullable|date',
-            'image' => 'nullable|file',
-            'image_url' => 'nullable|string',
+            'image' => 'nullable|string',
         ];
     }
 }

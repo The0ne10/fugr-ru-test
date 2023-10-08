@@ -20,7 +20,7 @@ use App\Http\Controllers\Controller;
  *                     @OA\Property(property="company", type="string", example="Едения корея"),
  *                     @OA\Property(property="phone", type="integer", example="89135624307"),
  *                     @OA\Property(property="email", type="string", example="korei@gmail.com"),
- *                     @OA\Property(property="birthday", type="date", example="7.10.1952"),
+ *                     @OA\Property(property="birthday", type="date", example="1952-10-08"),
  *                     @OA\Property(property="image", type="string", example="https://icdn.lenta.ru/images/2020/06/08/15/20200608154336600/square_320_3071243fc6e30d9f50ede8dd1272923b.jpg"),
  *                 )
  *             }
@@ -37,7 +37,7 @@ use App\Http\Controllers\Controller;
  *                 @OA\Property(property="company", type="string", example="Едения корея"),
  *                 @OA\Property(property="phone", type="integer", example="89135624307"),
  *                 @OA\Property(property="email", type="string", example="korei@gmail.com"),
- *                 @OA\Property(property="birthday", type="date", example="7.10.1952"),
+ *                 @OA\Property(property="birthday", type="date", example="1952-10-08"),
  *                 @OA\Property(property="image", type="string", example="https://icdn.lenta.ru/images/2020/06/08/15/20200608154336600/square_320_3071243fc6e30d9f50ede8dd1272923b.jpg"),
  *             ),
  *         ),
@@ -59,7 +59,7 @@ use App\Http\Controllers\Controller;
  *                 @OA\Property(property="company", type="string", example="Едения корея"),
  *                 @OA\Property(property="phone", type="integer", example="89135624307"),
  *                 @OA\Property(property="email", type="string", example="korei@gmail.com"),
- *                 @OA\Property(property="birthday", type="date", example="7.10.1952"),
+ *                 @OA\Property(property="birthday", type="date", example="1952-10-08"),
  *                 @OA\Property(property="image", type="string", example="https://icdn.lenta.ru/images/2020/06/08/15/20200608154336600/square_320_3071243fc6e30d9f50ede8dd1272923b.jpg"),
  *             )),
  *             @OA\Property(property="links", type="object",
@@ -108,7 +108,7 @@ use App\Http\Controllers\Controller;
  *                 @OA\Property(property="company", type="string", example="Едения корея"),
  *                 @OA\Property(property="phone", type="integer", example="89135624307"),
  *                 @OA\Property(property="email", type="string", example="korei@gmail.com"),
- *                 @OA\Property(property="birthday", type="date", example="7.10.1952"),
+ *                 @OA\Property(property="birthday", type="date", example="1952-10-08"),
  *                 @OA\Property(property="image", type="string", example="https://icdn.lenta.ru/images/2020/06/08/15/20200608154336600/square_320_3071243fc6e30d9f50ede8dd1272923b.jpg"),
  *             ),
  *         ),
@@ -132,9 +132,9 @@ use App\Http\Controllers\Controller;
  *                 @OA\Schema(
  *                     @OA\Property(property="fullName", type="string", example="Ким Чен Ым"),
  *                     @OA\Property(property="company", type="string", example="Северная корея"),
- *                     @OA\Property(property="phone", type="integer", example="8913624307"),
+ *                     @OA\Property(property="phone", type="integer", example="89135624307"),
  *                     @OA\Property(property="email", type="string", example="koreiEdit@gmail.com"),
- *                     @OA\Property(property="birthday", type="date", example="23.11.1956"),
+ *                     @OA\Property(property="birthday", type="date", example="1953-10-08"),
  *                     @OA\Property(property="image", type="string", example=null),
  *                 )
  *             }
@@ -146,18 +146,19 @@ use App\Http\Controllers\Controller;
  *         description="OK",
  *         @OA\JsonContent(
  *             @OA\Property(property="data", type="object",
+ *                 @OA\Property(property="id", type="string", example="1"),
  *                 @OA\Property(property="fullName", type="string", example="Ким Чен Ым"),
- *                     @OA\Property(property="company", type="string", example="Северная корея"),
- *                     @OA\Property(property="phone", type="integer", example="8913624307"),
- *                     @OA\Property(property="email", type="string", example="koreiEdit@gmail.com"),
- *                     @OA\Property(property="birthday", type="date", example="23.11.1956"),
- *                     @OA\Property(property="image", type="string", example=null),
+ *                 @OA\Property(property="company", type="string", example="Северная корея"),
+ *                 @OA\Property(property="phone", type="integer", example="8913624307"),
+ *                 @OA\Property(property="email", type="string", example="koreiEdit@gmail.com"),
+ *                 @OA\Property(property="birthday", type="date", example="1953-10-08"),
+ *                 @OA\Property(property="image", type="string", example=null),
  *             ),
  *         ),
  *     ),
  * ),
  *
- * @OA\Delte(
+ * @OA\Delete(
  *     path="/api/v1/notebook/{notebook}",
  *     summary="Удаление",
  *     tags={"Notebook"},

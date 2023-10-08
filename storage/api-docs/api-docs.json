@@ -46,7 +46,7 @@
                                                     "birthday": {
                                                         "type": "string",
                                                         "format": "date",
-                                                        "example": "7.10.1952"
+                                                        "example": "1952-10-08"
                                                     },
                                                     "image": {
                                                         "type": "string",
@@ -169,7 +169,7 @@
                                             "birthday": {
                                                 "type": "string",
                                                 "format": "date",
-                                                "example": "7.10.1952"
+                                                "example": "1952-10-08"
                                             },
                                             "image": {
                                                 "type": "string",
@@ -215,7 +215,7 @@
                                                 "birthday": {
                                                     "type": "string",
                                                     "format": "date",
-                                                    "example": "7.10.1952"
+                                                    "example": "1952-10-08"
                                                 },
                                                 "image": {
                                                     "type": "string",
@@ -280,7 +280,7 @@
                                                 "birthday": {
                                                     "type": "string",
                                                     "format": "date",
-                                                    "example": "7.10.1952"
+                                                    "example": "1952-10-08"
                                                 },
                                                 "image": {
                                                     "type": "string",
@@ -288,6 +288,39 @@
                                                 }
                                             },
                                             "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Удаление",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "ID notebook",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "done"
                                         }
                                     },
                                     "type": "object"
@@ -328,7 +361,7 @@
                                             },
                                             "phone": {
                                                 "type": "integer",
-                                                "example": "8913624307"
+                                                "example": "89135624307"
                                             },
                                             "email": {
                                                 "type": "string",
@@ -337,7 +370,7 @@
                                             "birthday": {
                                                 "type": "string",
                                                 "format": "date",
-                                                "example": "23.11.1956"
+                                                "example": "1953-10-08"
                                             },
                                             "image": {
                                                 "type": "string",
@@ -360,6 +393,10 @@
                                     "properties": {
                                         "data": {
                                             "properties": {
+                                                "id": {
+                                                    "type": "string",
+                                                    "example": "1"
+                                                },
                                                 "fullName": {
                                                     "type": "string",
                                                     "example": "Ким Чен Ым"
@@ -379,7 +416,7 @@
                                                 "birthday": {
                                                     "type": "string",
                                                     "format": "date",
-                                                    "example": "23.11.1956"
+                                                    "example": "1953-10-08"
                                                 },
                                                 "image": {
                                                     "type": "string",
@@ -395,35 +432,6 @@
                         }
                     }
                 }
-            }
-        }
-    },
-    "components": {
-        "responses": {
-            "200": {
-                "description": "OK",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "properties": {
-                                "message": {
-                                    "type": "string",
-                                    "example": "done"
-                                }
-                            },
-                            "type": "object"
-                        }
-                    }
-                }
-            }
-        },
-        "parameters": {
-            "notebook": {
-                "name": "notebook",
-                "in": "path",
-                "description": "ID notebook",
-                "required": true,
-                "example": 1
             }
         }
     }

@@ -35,7 +35,7 @@ class NotebookTest extends TestCase
             'phone' => '89135624308',
             'email' => 'exampled@mail.ru',
             'birthday' => '2023-05-03',
-            'image' => $file
+            'image' => 'images/' . $file->hashName()
         ];
 
         $res = $this->post('/api/v1/notebook', $data);
@@ -109,7 +109,7 @@ class NotebookTest extends TestCase
             'phone' => '88005553535',
             'email' => 'forTheEmperror@mail.ru',
             'birthday' => '2023-05-02',
-            'image' => $file
+            'image' => 'images/' . $file->hashName(),
         ];
 
         $res = $this->patch('/api/v1/notebook/' . $notebooks->id, $data);

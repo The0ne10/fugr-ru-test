@@ -29,8 +29,7 @@ class StoreRequest extends FormRequest
             'phone' => ['required', 'regex:' .self::ru_number, 'digits:11'],
             'email' => 'required|unique:notebooks,email',
             'birthday' => 'nullable|date',
-            'image' => 'nullable|file',
-            'image_url' => 'nullable|string',
+            'image' => 'sometimes|string',
         ];
     }
 }

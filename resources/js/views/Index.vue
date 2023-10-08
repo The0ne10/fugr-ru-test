@@ -27,8 +27,8 @@ export default {
     },
 
     watch: {
-        noteImage(to, from) {
-            console.log(this.noteImage)
+        image(to, from) {
+            console.log(this.image)
         }
     },
 
@@ -42,7 +42,6 @@ export default {
             axios.get(`/api/v1/notebook?page=${page}`)
                 .then(res => {
                     this.notebooks = res.data
-                    console.log(res.data)
                 })
         },
 
@@ -53,7 +52,7 @@ export default {
                 phone: this.phone,
                 email: this.email,
                 birthday: this.birthday,
-                image_url: this.image.url
+                image: this.image.url
             })
                 .then(res => {
                     this.fullName = ''

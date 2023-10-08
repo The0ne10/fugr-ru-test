@@ -19,7 +19,7 @@ class NotebookResource extends JsonResource
             'id' => $this->id,
             'fullName' => $this->fullName,
             'company' => $this->company,
-            'phone' => (int)$this->phone,
+            'phone' => $this->phone,
             'mail' => $this->email,
             'birthday' => $this->when($this->birthday != null, function () {
                 return Carbon::parse($this->birthday)->format('Y-m-d');
